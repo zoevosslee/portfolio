@@ -1,0 +1,80 @@
+body {
+  background-color: black;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  margin: 20px;
+  padding: 20px
+}
+
+nav {
+  text-align: right;
+}
+
+nav a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+img {
+  width: 150px;
+  float: right;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+img:hover {
+  filter: grayscale(0%);
+}
+
+/* Center content and apply flexbox for side-by-side layout */
+.container {
+  display: flex;
+  align-items: center; /* Aligns items vertically */
+  justify-content: center; /* Centers the content horizontally */
+  gap: 30px; /* Adds space between text and image */
+  max-width: 80%;
+  margin: 50px auto; /* Centers the entire section */
+}
+
+/* Style text container */
+.text-content {
+  flex: 1; /* Allows text to take available space */
+  max-width: 50%;
+  text-align: left;
+}
+
+.text-content:hover{
+  color: palevioletred;
+}
+
+/* Style the image */
+.image-content img {
+  width: 300px; /* Adjust image size */
+  border-radius: 8px; /* Optional rounded corners */
+  filter: grayscale(100%);
+  transition: filter 0.3s ease-in-out;
+}
+
+/* Restore image color on hover */
+.image-content img:hover {
+  filter: grayscale(0%);
+}
+
+/* Make the layout responsive for smaller screens */
+@media (max-width: 768px) {
+  .container {
+      flex-direction: column; /* Stack text and image on small screens */
+      text-align: center;
+  }
+
+  .text-content,
+  .image-content {
+      max-width: 100%;
+  }
+}
