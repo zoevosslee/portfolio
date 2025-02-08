@@ -1,80 +1,174 @@
+/* General Styles */
 body {
   background-color: black;
   color: white;
   font-family: 'Roboto', sans-serif;
-  text-align: center;
-  margin: 20px;
-  padding: 20px
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
+/* Navigation Bar */
 nav {
-  text-align: right;
+  position: absolute;
+  top: 20px;
+  right: 20px;
 }
 
 nav a {
   color: white;
   margin: 0 10px;
   text-decoration: none;
+  font-size: 18px;
 }
 
 nav a:hover {
   text-decoration: underline;
+  text-decoration-color: palevioletred;
 }
 
-img {
-  width: 150px;
-  float: right;
-  filter: grayscale(100%);
-  transition: filter 0.3s ease;
-}
-
-img:hover {
-  filter: grayscale(0%);
-}
-
-/* Center content and apply flexbox for side-by-side layout */
 .container {
   display: flex;
-  align-items: center; /* Aligns items vertically */
-  justify-content: center; /* Centers the content horizontally */
-  gap: 30px; /* Adds space between text and image */
-  max-width: 80%;
-  margin: 50px auto; /* Centers the entire section */
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  max-width: 90%;
+  margin: auto;
+  height: 100vh;
 }
 
-/* Style text container */
+
+/* Text Content */
 .text-content {
-  flex: 1; /* Allows text to take available space */
-  max-width: 50%;
+  flex: 1;
+  max-width: 45%;
   text-align: left;
+  padding-left: 5%;
 }
 
-.text-content:hover{
+.text-content p {
+  margin: 0;
+}
+
+.text-content:hover {
   color: palevioletred;
+}
+
+/* Image Content */
+.image-content {
+  flex: 1;
+  max-width: 45%;
+  display: flex;
+  justify-content: center;
 }
 
 /* Style the image */
 .image-content img {
-  width: 300px; /* Adjust image size */
-  border-radius: 8px; /* Optional rounded corners */
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 8px;
   filter: grayscale(100%);
   transition: filter 0.3s ease-in-out;
 }
 
-/* Restore image color on hover */
 .image-content img:hover {
   filter: grayscale(0%);
 }
 
-/* Make the layout responsive for smaller screens */
-@media (max-width: 768px) {
-  .container {
-      flex-direction: column; /* Stack text and image on small screens */
-      text-align: center;
-  }
+/* Resume Page */
 
-  .text-content,
-  .image-content {
-      max-width: 100%;
-  }
+#resume-page {
+  max-width: 900px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+/* Section Styling */
+#resume-page section {
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid palevioletred; /* Thin line between sections */
+}
+
+/* Last section shouldn't have a border */
+#resume-page section:last-of-type {
+  border-bottom: none;
+}
+
+/* Headers */
+#resume-page h1 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+#resume-page h1:hover{
+  animation: sparkle 5s infinite;
+}
+
+#resume-page p.subtitle {
+  font-size: 18px;
+  color: palevioletred;
+  margin-bottom: 30px;
+}
+
+/* Section Titles */
+#resume-page h2 {
+  font-size: 26px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  color: palevioletred;
+}
+
+/* Job Titles & Degree Titles */
+#resume-page h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+/* Institution/Company Name */
+#resume-page p strong {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* General Text */
+#resume-page p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+/* Remove Bullet Points */
+#resume-page ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+#resume-page ul li {
+  margin-bottom: 8px;
+  position: relative;
+  padding-left: 25px; /* Space for star */
+}
+
+#resume-page ul li::before {
+  content: "✦"; /* Small star bullet */
+  position: absolute;
+  left: 0;
+  color: gold;
+  font-size: 14px;
+  top: 3px; /* Adjusts alignment with text */
+}
+
+/* Add hover effect to job titles */
+#resume-page article h3:hover {
+  text-decoration: wavy underline;
+  text-decoration-color: pink;
 }
