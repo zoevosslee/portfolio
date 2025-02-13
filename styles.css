@@ -12,12 +12,14 @@ body {
 
 /* Navigation Bar */
 nav {
+  display: flex;
   position: absolute;
   top: 20px;
   right: 20px;
 }
 
 nav a {
+  flex: 1;
   color: white;
   margin: 0 10px;
   text-decoration: none;
